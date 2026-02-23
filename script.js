@@ -1,5 +1,6 @@
 let interviewList = [];
 let rejectedList = [];
+let currentStatus = "all";
 
 const totalElement = document.getElementById("total");
 const interviewElement = document.getElementById("interview-count");
@@ -45,6 +46,8 @@ function toggleStyle(id) {
   selected.classList.remove("text-[#64748B]", "bg-base-100");
   selected.classList.add("text-white", "bg-blue-500");
 
+  currentStatus = id;
+  
   if (id === "btn-interview") {
     showFilterSection();
     renderInterview();
@@ -84,6 +87,12 @@ mainElement.addEventListener("click", (e) => {
     if (!exist) {
       interviewList.push(cardInfo);
     }
+    rejectedList = rejectedList.filter((item) => item.company !== cardInfo.company);
+    if(currentStatus === "btn-rejected"){
+        renderReject();
+    }
+    calculateCount();
+
   } else if (e.target.classList.contains("btn-rejected")) {
     const parentNode = e.target.parentNode.parentNode;
     // console.log(parentNode)
@@ -109,13 +118,18 @@ mainElement.addEventListener("click", (e) => {
     if (!exist) {
       rejectedList.push(cardInfo);
     }
+    interviewList = interviewList.filter((item) => item.company !== cardInfo.company);
+      if(currentStatus === "btn-interview"){
+          renderInterview();
+      }
+    calculateCount();
   }
 });
 
 function renderInterview() {
   filteredSection.innerHTML = "";
-  const div = document.createElement("div");
   for (let interview of interviewList) {
+      const div = document.createElement("div");
     div.className = "p-6 flex justify-between bg-base-100";
     div.innerHTML = `
     <div class="space-y-4">
@@ -150,14 +164,14 @@ function renderInterview() {
             </button>
           </div>
     `;
+    filteredSection.appendChild(div);
   }
-  filteredSection.appendChild(div);
 }
 
 function renderReject() {
   filteredSection.innerHTML = "";
-  const div = document.createElement("div");
   for (let rejected of rejectedList) {
+      const div = document.createElement("div");
     div.className = "p-6 flex justify-between bg-base-100";
     div.innerHTML = `
     <div class="space-y-4">
@@ -192,6 +206,6 @@ function renderReject() {
             </button>
           </div>
     `;
+    filteredSection.appendChild(div);
   }
-  filteredSection.appendChild(div);
 }
