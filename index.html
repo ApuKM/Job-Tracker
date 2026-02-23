@@ -46,12 +46,12 @@
 
         <div class="p-4 bg-base-100">
           <p class="text-sm font-medium text-[#323B49]">Interview</p>
-          <p class="text-lg font-bold text-green-500" id="thrivingCount">0</p>
+          <p class="text-lg font-bold text-green-500" id="interview-count">0</p>
         </div>
 
         <div class="p-4 bg-base-100">
           <p class="text-sm font-medium text-[#323B49]">Rejected</p>
-          <p class="text-lg font-bold text-red-500" id="strugglingCount">0</p>
+          <p class="text-lg font-bold text-red-500" id="rejected-count">0</p>
         </div>
       </div>
     </header>
@@ -61,16 +61,22 @@
         <div class="flex flex-col">
           <h2 class="text-xl font-semibold text-[#002C5C]">Available Jobs</h2>
           <div class="grid grid-cols-3 gap-2 mt-6">
-            <button id="btn-all" class="btn text-xs text-[#64748B] bg-base-100">
+            <button
+              onclick="toggleStyle('btn-all')"
+              id="btn-all"
+              class="btn text-xs bg-blue-500 text-white"
+            >
               All
             </button>
             <button
+              onclick="toggleStyle('btn-interview')"
               id="btn-interview"
               class="btn text-xs text-[#64748B] bg-base-100"
             >
               Interview
             </button>
             <button
+              onclick="toggleStyle('btn-rejected')"
               id="btn-rejected"
               class="btn text-xs text-[#64748B] bg-base-100"
             >
@@ -79,7 +85,7 @@
           </div>
         </div>
         <div class="text-base font-medium text-[#64748B]">
-          <span id="toggle-total-jobs">0</span>jobs
+          <span id="total-jobs">0</span> jobs
         </div>
       </section>
 
@@ -113,7 +119,9 @@
             </div>
           </div>
           <div>
-            <i class="fa-regular fa-trash-can"></i>
+            <button class="btn btn-soft">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
           </div>
         </div>
         <div class="p-6 flex justify-between bg-base-100">
@@ -145,7 +153,9 @@
             </div>
           </div>
           <div>
-            <i class="fa-regular fa-trash-can"></i>
+            <button class="btn btn-soft">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
           </div>
         </div>
         <div class="p-6 flex justify-between bg-base-100">
@@ -177,7 +187,9 @@
             </div>
           </div>
           <div>
-            <i class="fa-regular fa-trash-can"></i>
+            <button class="btn btn-soft">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
           </div>
         </div>
         <div class="p-6 flex justify-between bg-base-100">
@@ -209,7 +221,9 @@
             </div>
           </div>
           <div>
-            <i class="fa-regular fa-trash-can"></i>
+            <button class="btn btn-soft">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
           </div>
         </div>
         <div class="p-6 flex justify-between bg-base-100">
@@ -242,7 +256,9 @@
             </div>
           </div>
           <div>
-            <i class="fa-regular fa-trash-can"></i>
+            <button class="btn btn-soft">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
           </div>
         </div>
         <div class="p-6 flex justify-between bg-base-100">
@@ -275,7 +291,9 @@
             </div>
           </div>
           <div>
-            <i class="fa-regular fa-trash-can"></i>
+            <button class="btn btn-soft">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
           </div>
         </div>
         <div class="p-6 flex justify-between bg-base-100">
@@ -306,7 +324,9 @@
             </div>
           </div>
           <div>
-            <i class="fa-regular fa-trash-can"></i>
+            <button class="btn btn-soft">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
           </div>
         </div>
         <div class="p-6 flex justify-between bg-base-100">
@@ -339,7 +359,9 @@
             </div>
           </div>
           <div>
-            <i class="fa-regular fa-trash-can"></i>
+            <button class="btn btn-soft">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
           </div>
         </div>
       </section>
