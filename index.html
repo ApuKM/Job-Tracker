@@ -34,11 +34,11 @@
     </style>
   </head>
   <body class="bg-base-200 min-h-screen pt-14">
-    <header class="header w-[80%] mx-auto">
+    <header class="header w-[95%] sm:w-[80%] mx-auto">
       <h1 class="text-3xl font-bold text-[#002C5C] mb-5">
         Job Application Tracker
       </h1>
-      <div class="grid grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
         <div class="p-4 bg-base-100">
           <p class="text-sm font-medium text-[#323B49]">Total</p>
           <p class="text-lg font-bold text-[#002C5C]" id="total">0</p>
@@ -55,12 +55,15 @@
         </div>
       </div>
     </header>
-    <hr class="w-[80%] mx-auto border border-gray-300 my-8" />
-    <main class="w-[80%] mx-auto">
-      <section id="toggle-section" class="flex justify-between">
+    <hr class="w-full sm:w-[80%] mx-auto border border-gray-300 my-8" />
+    <main class="w-[95%] sm:w-[80%] mx-auto">
+      <section
+        id="toggle-section"
+        class="flex flex-col sm:flex-row sm:justify-between gap-6"
+      >
         <div class="flex flex-col">
           <h2 class="text-xl font-semibold text-[#002C5C]">Available Jobs</h2>
-          <div class="grid grid-cols-3 gap-2 mt-6">
+          <div class="grid grid-cols-3 gap-2 mt-4 sm:mt-6">
             <button
               onclick="toggleStyle('btn-all')"
               id="btn-all"
@@ -90,20 +93,27 @@
         </div>
       </section>
 
-      <section id="no-jobs-section" class="w-full bg-base-100 flex justify-center py-14">
+      <section
+        id="no-jobs-section"
+        class="w-full bg-base-100 flex justify-center py-10 sm:py-14 px-4"
+      >
         <div class="">
-          <img class="w-20 mx-auto mb-4" src="./jobs.png" alt="">
-          <h2 class="text-3xl mb-2 text-[#002C5C] font-semibold text-center">No jobs available</h2>
-          <p class="text-[#64748B] text-center">Check back soon for new job opportunities</p>
+          <img class="w-20 mx-auto mb-4" src="./jobs.png" alt="" />
+          <h2 class="text-3xl mb-2 text-[#002C5C] font-semibold text-center">
+            No jobs available
+          </h2>
+          <p class="text-[#64748B] text-center">
+            Check back soon for new job opportunities
+          </p>
         </div>
       </section>
 
-      <section id="filtered-section" class="mt-4 space-y-4 hidden">
-
-      </section>
+      <section id="filtered-section" class="mt-4 space-y-4 hidden"></section>
 
       <section id="cards" class="mt-4 space-y-4">
-        <div class="p-6 flex justify-between bg-base-100">
+        <div
+          class="p-6 flex flex-col sm:flex-row sm:justify-between gap-6 bg-base-100"
+        >
           <div class="space-y-4">
             <div>
               <h2 class="text-[#002C5C] text-lg font-semibold company">
@@ -127,17 +137,21 @@
               </p>
             </div>
             <div class="flex gap-2">
-              <button class="btn btn-outline btn-success btn-interview">INTERVIEW</button>
-              <button class="btn btn-outline btn-error btn-rejected">REJECTED</button>
+              <button class="btn btn-outline btn-success btn-interview">
+                INTERVIEW
+              </button>
+              <button class="btn btn-outline btn-error btn-rejected">
+                REJECTED
+              </button>
             </div>
           </div>
-          <div>
+          <div class="flex justify-end sm:block">
             <button class="btn btn-soft btn-delete">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
         </div>
-        <div class="p-6 flex justify-between bg-base-100">
+        <div class="p-6 flex flex-col sm:flex-row sm:justify-between gap-6 bg-base-100">
           <div class="space-y-4">
             <div>
               <h2 class="text-[#002C5C] text-lg font-semibold company">
@@ -161,23 +175,29 @@
               </p>
             </div>
             <div class="flex gap-2">
-              <button class="btn btn-outline btn-success btn-interview">INTERVIEW</button>
-              <button class="btn btn-outline btn-error btn-rejected">REJECTED</button>
+              <button class="btn btn-outline btn-success btn-interview">
+                INTERVIEW
+              </button>
+              <button class="btn btn-outline btn-error btn-rejected">
+                REJECTED
+              </button>
             </div>
           </div>
-          <div>
+          <div class="flex justify-end sm:block">
             <button class="btn btn-soft btn-delete">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
         </div>
-        <div class="p-6 flex justify-between bg-base-100">
+        <div class="p-6 flex flex-col sm:flex-row sm:justify-between gap-6 bg-base-100">
           <div class="space-y-4">
             <div>
               <h2 class="text-[#002C5C] text-lg font-semibold company">
                 DataViz Solutions
               </h2>
-              <h3 class="text-[#64748B] job-type">Data Visualization Specialist</h3>
+              <h3 class="text-[#64748B] job-type">
+                Data Visualization Specialist
+              </h3>
             </div>
 
             <p class="text-[#64748B] text-sm remote-full">
@@ -195,17 +215,21 @@
               </p>
             </div>
             <div class="flex gap-2">
-              <button class="btn btn-outline btn-success btn-interview">INTERVIEW</button>
-              <button class="btn btn-outline btn-error btn-rejected">REJECTED</button>
+              <button class="btn btn-outline btn-success btn-interview">
+                INTERVIEW
+              </button>
+              <button class="btn btn-outline btn-error btn-rejected">
+                REJECTED
+              </button>
             </div>
           </div>
-          <div>
+          <div class="flex justify-end sm:block">
             <button class="btn btn-soft btn-delete">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
         </div>
-        <div class="p-6 flex justify-between bg-base-100">
+        <div class="p-6 flex flex-col sm:flex-row sm:justify-between gap-6 bg-base-100">
           <div class="space-y-4">
             <div>
               <h2 class="text-[#002C5C] text-lg font-semibold company">
@@ -229,17 +253,21 @@
               </p>
             </div>
             <div class="flex gap-2">
-              <button class="btn btn-outline btn-success btn-interview">INTERVIEW</button>
-              <button class="btn btn-outline btn-error btn-rejected">REJECTED</button>
+              <button class="btn btn-outline btn-success btn-interview">
+                INTERVIEW
+              </button>
+              <button class="btn btn-outline btn-error btn-rejected">
+                REJECTED
+              </button>
             </div>
           </div>
-          <div>
+          <div class="flex justify-end sm:block">
             <button class="btn btn-soft btn-delete">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
         </div>
-        <div class="p-6 flex justify-between bg-base-100">
+        <div class="p-6 flex flex-col sm:flex-row sm:justify-between gap-6 bg-base-100">
           <div class="space-y-4">
             <div>
               <h2 class="text-[#002C5C] text-lg font-semibold company">
@@ -264,17 +292,21 @@
               </p>
             </div>
             <div class="flex gap-2">
-              <button class="btn btn-outline btn-success btn-interview">INTERVIEW</button>
-              <button class="btn btn-outline btn-error btn-rejected">REJECTED</button>
+              <button class="btn btn-outline btn-success btn-interview">
+                INTERVIEW
+              </button>
+              <button class="btn btn-outline btn-error btn-rejected">
+                REJECTED
+              </button>
             </div>
           </div>
-          <div>
+          <div class="flex justify-end sm:block">
             <button class="btn btn-soft btn-delete">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
         </div>
-        <div class="p-6 flex justify-between bg-base-100">
+        <div class="p-6 flex flex-col sm:flex-row sm:justify-between gap-6 bg-base-100">
           <div class="space-y-4">
             <div>
               <h2 class="text-[#002C5C] text-lg font-semibold company">
@@ -299,20 +331,26 @@
               </p>
             </div>
             <div class="flex gap-2">
-              <button class="btn btn-outline btn-success btn-interview">INTERVIEW</button>
-              <button class="btn btn-outline btn-error btn-rejected">REJECTED</button>
+              <button class="btn btn-outline btn-success btn-interview">
+                INTERVIEW
+              </button>
+              <button class="btn btn-outline btn-error btn-rejected">
+                REJECTED
+              </button>
             </div>
           </div>
-          <div>
+          <div class="flex justify-end sm:block">
             <button class="btn btn-soft btn-delete">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
         </div>
-        <div class="p-6 flex justify-between bg-base-100">
+        <div class="p-6 flex flex-col sm:flex-row sm:justify-between gap-6 bg-base-100">
           <div class="space-y-4">
             <div>
-              <h2 class="text-[#002C5C] text-lg font-semibold company">StartupXYZ</h2>
+              <h2 class="text-[#002C5C] text-lg font-semibold company">
+                StartupXYZ
+              </h2>
               <h3 class="text-[#64748B] job-type">Full Stack Engineer</h3>
             </div>
 
@@ -332,17 +370,21 @@
               </p>
             </div>
             <div class="flex gap-2">
-              <button class="btn btn-outline btn-success btn-interview">INTERVIEW</button>
-              <button class="btn btn-outline btn-error btn-rejected">REJECTED</button>
+              <button class="btn btn-outline btn-success btn-interview">
+                INTERVIEW
+              </button>
+              <button class="btn btn-outline btn-error btn-rejected">
+                REJECTED
+              </button>
             </div>
           </div>
-          <div>
+          <div class="flex justify-end sm:block">
             <button class="btn btn-soft btn-delete">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </div>
         </div>
-        <div class="p-6 flex justify-between bg-base-100">
+        <div class="p-6 flex flex-col sm:flex-row sm:justify-between gap-6 bg-base-100">
           <div class="space-y-4">
             <div>
               <h2 class="text-[#002C5C] text-lg font-semibold company">
@@ -367,11 +409,15 @@
               </p>
             </div>
             <div class="flex gap-2">
-              <button class="btn btn-outline btn-success btn-interview">INTERVIEW</button>
-              <button class="btn btn-outline btn-error btn-rejected">REJECTED</button>
+              <button class="btn btn-outline btn-success btn-interview">
+                INTERVIEW
+              </button>
+              <button class="btn btn-outline btn-error btn-rejected">
+                REJECTED
+              </button>
             </div>
           </div>
-          <div>
+          <div class="flex justify-end sm:block">
             <button class="btn btn-soft btn-delete">
               <i class="fa-regular fa-trash-can"></i>
             </button>
